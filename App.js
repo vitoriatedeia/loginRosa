@@ -5,33 +5,44 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.view}>
-      <Text style={styles.login}>LOGIN</Text>
-      <Text style={styles.subLogin}>TO CONTINUE</Text>
+    <ImageBackground
+      style={styles.container}
+      source={require("./scr/assets/images/fundo.jpg")}
+      resizeMode="cover"
+    >
+      <View style={styles.view}>
+        <Text style={styles.login}>LOGIN</Text>
+        <Text style={styles.subLogin}>TO CONTINUE</Text>
 
-      <TextInput
-        style={styles.username}
-        placeholder="Username"
-        placeholderTextColor="white"
-      />
+        <TextInput
+          style={styles.username}
+          placeholder="Username"
+          placeholderTextColor="white"
+        />
 
-      <TextInput
-        style={styles.password}
-        placeholder="Password"
-        placeholderTextColor="white"
-      />
+        <TextInput
+          style={styles.password}
+          placeholder="Password"
+          placeholderTextColor="white"
+        />
 
-      <TouchableOpacity style={styles.btn}>
-        <Text style={styles.txtbtn}>Login</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.btn}>
+          <Text style={styles.txtbtn}>Login</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    resizeMode: "cover",
+  },
   login: {
     fontSize: 45,
     color: "white",
@@ -40,7 +51,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "pink",
   },
   subLogin: {
     fontSize: 17,
