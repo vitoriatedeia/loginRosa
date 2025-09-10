@@ -8,7 +8,11 @@ import {
   ImageBackground,
 } from "react-native";
 
+import { useState } from "react";
+
 export default function App() {
+  const [login, setLogin] = useState("");
+  const [home, setHome] = useState("");
   return (
     <ImageBackground
       style={styles.container}
